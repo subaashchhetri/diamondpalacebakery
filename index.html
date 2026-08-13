@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond Palace Lords Plaza - Bakery Menu</title>
+  <meta name="description" content="Welcome to Hotel Diamond Palace Lords Plaza's Bakery, Nepalgunj. Browse our premium muffins, pastries, cakes, cookies, doughnuts, and patties.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts: Outfit (headings/accent), Inter (body/text), Playfair Display (serif style) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- App Wrapper (centers mobile layout on desktop screens) -->
+  <div class="app-container" id="app">
+    
+    <!-- ========================================== -->
+    <!-- 1. SPLASH SCREEN                           -->
+    <!-- ========================================== -->
+    <section class="screen splash-screen active" id="splash-screen">
+      <!-- Splash Hero Banner (Coffee Beans & Portafilter) -->
+      <div class="splash-hero"></div>
+      
+      <!-- Welcome Copy -->
+      <div class="splash-content">
+        <h2 class="splash-subtitle">welcome to</h2>
+        <h1 class="splash-title" style="font-size: 32px; font-weight: 800; letter-spacing: 1.5px; white-space: nowrap;">DIAMOND PALACE</h1>
+        <p class="splash-tagline" style="font-size: 17px; font-weight: 500; opacity: 0.95; letter-spacing: 2px; margin-top: -5px;">LORDS PLAZA</p>
+        <p class="splash-location" style="font-size: 11px; opacity: 0.6; letter-spacing: 1.5px; margin-top: 5px; text-transform: uppercase;">Bakery &bull; Nepalgunj</p>
+        
+        <!-- Drag-to-Unlock Slider Container -->
+        <div class="swipe-slider-container" id="slider-container">
+          <div class="swipe-track">
+            <span class="swipe-text">Slide to see menu</span>
+            <div class="swipe-handle" id="slider-handle">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact details at bottom of Splash -->
+        <div class="splash-footer">
+          <p class="contact-label">CONTACT US</p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/diamondpalace_lords_plaza" target="_blank" rel="noopener" aria-label="Instagram" class="social-btn instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/W7cF82M7TC7VzB2p7" target="_blank" rel="noopener" aria-label="Location" class="social-btn location">
+              <i class="fa-solid fa-location-dot"></i>
+            </a>
+            <a href="tel:081-530835" aria-label="Call Us" class="social-btn phone">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 2. MAIN MENU SCREEN                        -->
+    <!-- ========================================== -->
+    <section class="screen menu-screen" id="menu-screen">
+      
+      <!-- Left Vertical Navigation Sidebar -->
+      <aside class="menu-sidebar">
+        <!-- More Button (Circular overlay drawer trigger) -->
+        <button class="more-btn" id="more-trigger" aria-label="Open navigation menu">
+          <div class="more-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span class="more-text">MORE</span>
+        </button>
+        
+        <!-- Sidebar Navigation Categories -->
+        <nav class="sidebar-categories" id="sidebar-categories">
+          <!-- Dynamically populated, or hardcoded for SEO/accessibility fallback -->
+          <button class="category-btn active" data-category="muffins" aria-label="Muffins Category">
+            <div class="cat-icon-box"><i class="fa-solid fa-cookie"></i></div>
+            <span class="cat-label">MUFFINS</span>
+          </button>
+          <button class="category-btn" data-category="pastries" aria-label="Pastries Category">
+            <div class="cat-icon-box"><i class="fa-solid fa-bread-slice"></i></div>
+            <span class="cat-label">PASTRIES</span>
+          </button>
+          <button class="category-btn" data-category="cake" aria-label="Cakes Category">
+            <div class="cat-icon-box"><i class="fa-solid fa-cake-candles"></i></div>
+            <span class="cat-label">CAKE</span>
+          </button>
+          <button class="category-btn" data-category="cookies" aria-label="Cookies Category">
+            <div class="cat-icon-box"><i class="fa-solid fa-cookie-bite"></i></div>
+            <span class="cat-label">COOKIES</span>
+          </button>
+          <button class="category-btn" data-category="doughnuts" aria-label="Doughnuts Category">
+            <div class="cat-icon-box"><i class="fa-solid fa-circle-dot"></i></div>
+            <span class="cat-label">DOUGHNUTS</span>
+          </button>
+          <button class="category-btn" data-category="patties" aria-label="Patties Category">
+            <div class="cat-icon-box"><i class="fa-solid fa-cheese"></i></div>
+            <span class="cat-label">PATTIES</span>
+          </button>
+        </nav>
+      </aside>
+
+      <!-- Right Product Listing Content Panel -->
+      <main class="menu-content" id="menu-content-panel">
+        <!-- Top Branding Logo Stamp -->
+        <header class="menu-header" style="margin-bottom: 20px;">
+          <div class="logo-container" style="width: auto; height: 60px;">
+            <img class="hotel-logo-img" src="assets/logo.jpg" alt="Hotel Diamond Palace Lords Plaza Logo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+          </div>
+        </header>
+
+        <!-- Dynamic Product Listing Container -->
+        <div class="product-list" id="product-list">
+          <!-- Populated by Javascript -->
+          <div class="product-loader">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+            <p>Loading espresso...</p>
+          </div>
+        </div>
+
+        <!-- Floating Cart Button (Floating Action Button - FAB) -->
+        <button class="cart-fab" id="cart-fab" aria-label="View Shopping Cart">
+          <i class="fa-solid fa-shopping-bag"></i>
+          <span class="cart-count">0</span>
+        </button>
+      </main>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. DRAWER OVERLAY NAVIGATION ("... MORE")  -->
+    <!-- ========================================== -->
+    <div class="drawer-overlay" id="drawer-menu" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="drawer-container">
+        
+        <!-- Top Drawer Header Details -->
+        <div class="drawer-header">
+          <button class="close-btn" id="drawer-close" aria-label="Close navigation menu">
+            <i class="fa-solid fa-times"></i> Close
+          </button>
+          
+          <!-- Small cup logo indicator -->
+          <div class="drawer-mini-logo" style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #fff; padding: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+            <img src="assets/logo.jpg" alt="Lords Plaza Logo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+          </div>
+        </div>
+
+        <!-- Vertical Drawer Links -->
+        <nav class="drawer-nav">
+          <ul class="drawer-links">
+            <li><a href="#" class="drawer-link active" id="link-home">Home</a></li>
+            <li><a href="#" class="drawer-link" id="link-gallery">Gallery</a></li>
+            <li><a href="#" class="drawer-link" id="link-features">Features</a></li>
+            <li><a href="#" class="drawer-link" id="link-about">About US</a></li>
+          </ul>
+        </nav>
+        
+        <!-- Address & Contact Info at Bottom -->
+        <div class="drawer-footer">
+          <p class="contact-label">CONTACT US</p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/diamondpalace_lords_plaza" target="_blank" rel="noopener" aria-label="Instagram" class="social-btn instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/W7cF82M7TC7VzB2p7" target="_blank" rel="noopener" aria-label="Location" class="social-btn location">
+              <i class="fa-solid fa-location-dot"></i>
+            </a>
+            <a href="tel:081-530835" aria-label="Call Us" class="social-btn phone">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+          <address class="drawer-address">
+            Lords Plaza, Nepalgunj, Nepal
+          </address>
+        </div>
+
+        <!-- Overlapping cup illustration background decoration at bottom right -->
+        <div class="drawer-decoration-container">
+          <!-- This will hold the generated image which overlaps outside the border -->
+          <img class="drawer-overlap-img" id="drawer-overlap-img" src="assets/sidebar_coffee_drink.jpg" alt="Premium coffee drink with cedar branches">
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 4. CART OVERLAY DIALOG / BOTTOM SHEET      -->
+    <!-- ========================================== -->
+    <div class="cart-overlay" id="cart-menu" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="cart-container">
+        
+        <!-- Cart Header -->
+        <div class="cart-header">
+          <button class="close-btn" id="cart-close" aria-label="Close cart">
+            <i class="fa-solid fa-times"></i> Close
+          </button>
+          <h2 class="cart-title">Your Order</h2>
+        </div>
+        
+        <!-- Cart Items List Container -->
+        <div class="cart-items-list" id="cart-items-list">
+          <!-- Dynamically populated by JS -->
+        </div>
+        
+        <!-- Cart Total & Order Button -->
+        <div class="cart-footer">
+          <div class="cart-total-row">
+            <span>Total Amount:</span>
+            <span class="cart-total-amount" id="cart-total-amount">NRs. 0</span>
+          </div>
+          <button class="order-now-btn" id="order-now-btn">
+            <i class="fa-brands fa-whatsapp"></i> Order Now via WhatsApp
+          </button>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Script tags -->
+  <script src="menu-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
