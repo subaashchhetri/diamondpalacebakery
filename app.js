@@ -488,4 +488,28 @@ document.addEventListener('DOMContentLoaded', () => {
       toastItem.remove();
     }, 2400);
   }
+
+  // Prevent overall iOS Safari window elastic scroll bouncing
+  document.addEventListener('touchmove', function(e) {
+    let isScrollable = false;
+    let parent = e.target;
+    
+    // Bubble up to see if gesture started in scrollable panels
+    while (parent && parent !== document.body) {
+      if (parent.classList && (
+        parent.classList.contains('product-list') || 
+        parent.classList.contains('sidebar-categories') || 
+        parent.classList.contains('cart-items-list')
+      )) {
+        isScrollable = true;
+        break;
+      }
+      parent = parent.parentNode;
+    }
+    
+    // Prevent default body scrolling if touch is outside scrollable panels
+    if (!isScrollable) {
+      e.preventDefault();
+    }
+  }, { passive: false });
 });

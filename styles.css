@@ -46,6 +46,7 @@ html, body {
   height: 100%;
   overflow: hidden;
   position: fixed;
+  overscroll-behavior: none; /* disables pull-to-refresh & drag-bounce */
 }
 
 body {
@@ -441,6 +442,8 @@ body {
   width: 100%;
   flex: 1;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* smooth momentum scroll iOS */
+  overscroll-behavior-y: contain;   /* prevent scroll leaking to body */
   scrollbar-width: none; /* Hide scrollbar Firefox */
   position: relative;
   z-index: 2;
@@ -569,6 +572,8 @@ body {
 .product-list {
   flex: 1;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* smooth momentum scroll iOS */
+  overscroll-behavior-y: contain;   /* prevent scroll leaking to body */
   padding-right: 2px;
   padding-bottom: 40px; /* spacing for FAB cart */
   display: flex;
@@ -944,6 +949,8 @@ body {
 .cart-items-list {
   flex: 1;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* smooth momentum scroll iOS */
+  overscroll-behavior-y: contain;   /* prevent scroll leaking to body */
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
