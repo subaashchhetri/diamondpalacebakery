@@ -131,6 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         splashScreen.classList.remove('active');
         menuScreen.classList.add('active');
+        
+        // Reset scroll position to 0 to prevent "Address Bar Viewport Offset Lock" bug on Chrome/Webviews
+        window.scrollTo(0, 0);
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        
         // Trigger default active category rendering
         const activeCategory = categoryContainer.querySelector('.category-btn.active');
         const categoryId = activeCategory ? activeCategory.getAttribute('data-category') : 'muffins';
